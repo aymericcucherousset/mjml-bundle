@@ -30,7 +30,8 @@
         "phpstan/phpstan": "^0.12.0",
         "phpunit/phpunit": "^7.0|^8.0|^9.0",
         "matthiasnoback/symfony-config-test": "^4.1|^5.2|^6.1",
-        "symplify/easy-coding-standard": "^9.0"
+        "symplify/easy-coding-standard": "^9.0",
+        "yoast/phpunit-polyfills": "^3.0"
     },
     "scripts": {
         "cs-check": "vendor/bin/ecs check tests src",
