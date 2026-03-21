@@ -2,8 +2,8 @@
 
 namespace NotFloran\MjmlBundle\Renderer;
 
-use Mjml\Mjml;
 use Mjml\Exception\RenderException;
+use Mjml\Mjml;
 
 final class MjmlPhpRenderer implements RendererInterface
 {
