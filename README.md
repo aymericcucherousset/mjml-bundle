@@ -57,7 +57,9 @@ class AppKernel extends Kernel
 
 ## Renderer
 
-For the moment only one renderer is available, the binary renderer.
+The default renderer is **binary**, which uses the official MJML Node.js implementation.
+
+The **mjml-php** (PHP extension) renderer is also available as an alternative. It is based on [MRML](https://github.com/jdrouet/mrml), a third-party Rust reimplementation of MJML.
 
 ### Binary
 
@@ -81,6 +83,21 @@ mjml:
 ```
 
 The `node` option is there for those who have problems with `$PATH`, see [#35](https://github.com/notFloran/mjml-bundle/issues/35).
+
+Note that each render spawns a new Node.js process, which may impact performance in high-volume scenarios.
+
+### mjml-php
+
+Install [mjml-php](https://github.com/alekitto/mjml-php), a PHP extension that embeds [MRML](https://github.com/jdrouet/mrml),
+the MJML rendering engine written in Rust, so that you can render MJML templates directly from PHP without shelling out to a CLI tool.
+
+Then you need to update the configuration:
+
+```yaml
+# config/packages/mjml.yaml
+mjml:
+  renderer: mjml_php
+```
 
 ### Custom
 
